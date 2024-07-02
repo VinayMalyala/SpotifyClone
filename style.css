@@ -28,14 +28,56 @@ nav ul li{
 
 }
 
-.brand img{
-    width: 40px;
-    padding: 0 8px;
-}
-
 .brand{
     display: flex;
     align-items: center;
     font-weight: bolder;
     font-size: 1.3rem;
 }
+
+.brand img{
+    width: 40px;
+    padding: 0 8px;
+}
+
+.container{
+    background-color: #000;
+    color: #fff;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 12px auto;
+    width: 70%;
+    min-height: 65vh;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+}
+
+.bottom{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    background-color: #000;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#myProgressBar{
+    width: 75%;
+}
+
+.icons{
+    margin: 15px 0 0 0;
+}
+
+.icons i{
+    color: #fff;
+    font-size: 28px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
