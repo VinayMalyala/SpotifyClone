@@ -6,20 +6,23 @@ let audioElement = new Audio('songs/Kanave.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
-
+let songItems = Array.from(document.getElementsByClassName('songItem'));
 let songs = [
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
-    { name: 'Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/1.jpg' },
+    { songName: 'Kanave Kanave', path: 'songs/Kanave.mp3', coverPath: 'images/covers/Kanave.png' },
+    { songName: 'Evarevaro', path: 'songs/Evarevaro.mp3', coverPath: 'images/covers/Evarevaro.png' },
+    { songName: 'A Love so Beautiful', path: 'songs/A_love_so_beautiful.mp3', coverPath: 'images/covers/a-love-so-beautiful-4.webp' },
+    { songName: 'I (Reprise)', path: 'songs/I.mp3', coverPath: 'images/covers/I.png' },
+    { songName: 'Nuvvunte', path: 'songs/Nuvvunte.mp3', coverPath: 'images/covers/Nuvvunte.png' },
+    { songName: 'Pilla O Pilla', path: 'songs/Pilla.mp3', coverPath: 'images/covers/Pilla.png' },
+    { songName: 'Samjhawaan', path: 'songs/Samjhawaan.mp3', coverPath: 'images/covers/Samjhawan.png' },
+    { songName: 'Yedurangula Vaana', path: 'songs/Yedurangula.mp3', coverPath: 'images/covers/Yedurangula.png' },
 ]
 
-
-// audioElement.play();
+songItems.forEach((element, i) => {
+    // console.log(element, i)
+    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+    element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+})
 
 // Handle play/pause click 
 masterPlay.addEventListener('click', () => {
@@ -46,3 +49,18 @@ audioElement.addEventListener('timeupdate', () => {
 myProgressBar.addEventListener('change', () => {
     audioElement.currentTime = myProgressBar.value * audioElement.duration / 100;
 });
+
+const makeAllPlays = () =>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-circle-play');
+    })
+}
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+    element.addEventListener('click', (e) => {
+        makeAllPlays();
+        e.target.classList.remove('fa-circle-play');
+        e.target.classList.add('fa-pause-circle');
+    })
+})
