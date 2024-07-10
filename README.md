@@ -18,6 +18,11 @@ This is a simple Spotify clone website built using HTML, CSS, and JavaScript. Th
 
 To get a local copy up and running follow these simple steps.
 
+### Preview:
+
+https://github.com/VinayMalyala/SpotifyClone/assets/111955986/ebd018b8-f306-40b0-8e5d-3111f9efcdbd
+
+
 ### Prerequisites
 
 You need a web browser to run this project.
